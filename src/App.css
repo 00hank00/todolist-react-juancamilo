@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1600582910964-5b7c109e6868?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  font-size: 1.1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  height: 100%;
+  background-repeat: no-repeat;
+	background-color: transparent;
+}
+@keyframes strikeitem {
+  to {
+    width: calc(100% + 1rem);
+  }
+}
+
+#todolist {
+  margin: 4rem auto;
+  padding: 2rem 3rem 3rem;
+  max-width: 500px;
+  background: #66b5ff7a;
+  color: #fff;
+  box-shadow: 0px 5px 0px 0px rgba(100, 100, 100, 0.1);
+  border-radius: 70px;
+}
+#todolist h1 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2.6rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+#todolist h1 span {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+  margin-left: 3px;
+  margin-top: 0.2rem;
+}
+
+#todolist .emptylist {
+  margin-top: 2.6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  opacity: 0.8;
+}
+#todolist ul {
+  margin-top: 2.6rem;
+  list-style: none;
+}
+#todolist .todolist-move {
+  transition: transform 1s;
+}
+#todolist li {
+  display: flex;
+  margin: 0 -3rem 4px;
+  padding: 1.1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding-right: 10px;
+}
+
+#todolist .actions {
+  flex-shrink: 0;
+  padding-left: 0.7em;
+}
+#todolist .label {
+  position: relative;
+  transition: opacity 0.2s linear;
+}
+#todolist .done .label {
+  opacity: 0.6;
+}
+#todolist .done .label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -0.5rem;
+  display: block;
+  width: 0%;
+  height: 1px;
+  background: #fff;
+  animation: strikeitem 0.3s ease-out 0s forwards;
+}
+#todolist .btn-picto {
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+form {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+form label {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+form input {
+  flex-grow: 1;
+  border: none;
+  background: rgba(0, 255, 255, 0.411);
+  padding: 0 1.5em;
+  font-size: initial;
+}
+form button {
+  padding: 0 1.3rem;
+  border: none;
+  background: #ff6666;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+}
+form button:hover {
+  background: #ff5e5e;
+}
+form input,
+form button {
+  font-family: 'Quicksand', sans-serif;
+  height: 3rem;
+}
+
+.togglebutton-wrapper {
+  margin-top: 1em;
+}
+.togglebutton-wrapper label {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.togglebutton-wrapper input {
+  position: absolute;
+  left: -9999px;
+}
+.togglebutton-wrapper .togglebutton-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+.togglebutton-wrapper .tooglebutton-box {
+  position: relative;
+  display: block;
+  margin-left: 0.6em;
+  width: 38px;
+  height: 22px;
+  background: white;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.togglebutton-wrapper .tooglebutton-box:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff6666;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+}
+.togglebutton-wrapper.togglebutton-focus .tooglebutton-box {
+  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+.togglebutton-wrapper.togglebutton-checked .tooglebutton-box:before {
+  left: calc(100% - 4px - 16px);
+  opacity: 1;
+}
+.todolist-Boton {
+  background-color: rgba(0, 255, 255, 0.411);
+  display: flex;
+  margin-top: 15px;
+  border-radius: 100px;
+  color: white;
+}
+.add-Iput {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.input-Todolist {
+  background-color: rgba(0, 255, 255, 0.411);
+  border-radius: 10px;
+  height: 30px;
+  width: 270px;
+  border: 1px solid;
+  border-color: rgba(0, 255, 255, 0.411);
+  margin-top: 5px;
+  padding: 10px;
+  color: #fff;
+}
