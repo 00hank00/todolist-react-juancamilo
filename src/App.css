@@ -204,3 +204,10 @@ form button {
   padding: 10px;
   color: #fff;
 }
+.clearAll-boton{
+   background-color: rgba(0, 255, 255, 0.411);
+  display: flex;
+  margin-top: 15px;
+  border-radius: 100px;
+  color: white;
+}
