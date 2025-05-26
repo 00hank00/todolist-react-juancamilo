@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Task } from './Task';
+import todoService from './todo-service';
 
 const TODO_LIST = [
   { label: 'Ir a la playa' },
@@ -12,7 +13,15 @@ const INPUT_DEFAULT_VALUE = '';
 
 function App() {
   const [input, setInput] = useState(INPUT_DEFAULT_VALUE);
-  const [todoList, setTodoList] = useState(TODO_LIST);
+  const [todoList, setTodoList] = useState([]);
+  
+useEffect(() => {
+  const loadInitialValues = async () => {
+    const todoList = await todoService.getTodolist();
+    setTodoList(todoList);
+  };
+  loadInitialValues();
+}, []);
 
   const handleAddTask = () => {
     if (input) {
