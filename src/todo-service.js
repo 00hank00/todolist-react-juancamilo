@@ -1,10 +1,10 @@
-import userApi from './user-api.js';
+import userApi from './user-api.js'
 
-const userName = 'pepito';
+const USERNAME = 'pepito';
 
-const getTodolist = async () => {
-  const { todos } = await userApi.getById(userName);
+const getTodoList = async () => {
+  const { todos } = await userApi.getById(USERNAME);
   return todos;
 };
 
-export default { getTodolist };
+export default { getTodoList };
